@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROAST WORKS — Coffee Design Archive</title>
+<meta name="description" content="A working archive of coffee-related design work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">ROAST<span>WORKS</span></a>
+    <nav class="site-nav">
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <p class="hero-eyebrow">DESIGN ARCHIVE — VOL. 01</p>
+    <h1 class="hero-title">
+      <span class="line line-1">EVERYTHING</span>
+      <span class="line line-2">I'VE MADE</span>
+      <span class="line line-3">ABOUT <em>COFFEE</em></span>
+    </h1>
+    <p class="hero-sub">Labels, marks, packaging and odd little experiments —
+      pulled from sketchbooks, roasteries and late-night bursts of
+      caffeine-fuelled overthinking.</p>
+    <a class="hero-scroll" href="#archive">Scroll the archive ↓</a>
+    <div class="hero-stamp" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path id="stampCircle" fill="none" d="M100,20 a80,80 0 1,1 -0.1,0"/>
+        <text font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="3" fill="currentColor">
+          <textPath href="#stampCircle" startOffset="0%">EST. SOMEWHERE · FRESHLY BREWED · </textPath>
+        </text>
+        <text x="100" y="108" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="30" fill="currentColor">100%</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- FILTERS + ARCHIVE -->
+  <section class="archive-section wrap" id="archive">
+    <div class="archive-heading">
+      <h2>The Archive</h2>
+      <p id="archiveCount" class="archive-count">loading pieces…</p>
+    </div>
+
+    <div class="filters" id="filters" role="tablist" aria-label="Filter by category">
+      <!-- populated by JS -->
+    </div>
+
+    <div class="gallery" id="gallery" aria-live="polite">
+      <!-- cards injected by script.js, pulled from /api/designs.php -->
+    </div>
+
+    <div class="gallery-empty" id="galleryEmpty" hidden>
+      <p>Nothing filed under this tag yet.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <p class="about-eyebrow">About the maker</p>
+        <h2>Coffee is the client that never stops giving notes.</h2>
+        <p>This is a running archive of design work — branding, packaging,
+          illustration, whatever the bean called for — built one shot of
+          espresso at a time. Real pieces get swapped in here as they're
+          shot, scanned and shipped.</p>
+      </div>
+      <div class="about-meta">
+        <div class="meta-row"><span>Based in</span><strong>—</strong></div>
+        <div class="meta-row"><span>Focus</span><strong>Branding · Packaging · Illustration</strong></div>
+        <div class="meta-row"><span>Status</span><strong>Open for coffee-shaped work</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section wrap" id="contact">
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <p class="about-eyebrow">Get in touch</p>
+        <h2>Got a coffee brand<br>that needs a face?</h2>
+        <p>Drop a note below — it goes straight to a small PHP endpoint
+          that validates it before anything ships onward.</p>
+      </div>
+      <form id="contactForm" class="contact-form" novalidate>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" id="name" required autocomplete="name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" id="email" required autocomplete="email">
+        </label>
+        <label>
+          <span>Tell me about the brew</span>
+          <textarea name="message" id="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" id="submitBtn">Send it →</button>
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>© <span id="year"></span> Roast Works — design archive</span>
+    <span class="footer-note">Built with HTML · JS · PHP</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
